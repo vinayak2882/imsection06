@@ -19,16 +19,16 @@ class Register extends React.Component {
       return;
     }
     this.props.addContactHandler(this.state);
-    this.setState({ name: "", email: "" });
-    this.props.history.push("/");
+    this.setState({ name: "", email: "",password:"",username:"", mobile:"",description:"", });
+    this.props.history.push("/auth/register");
   };
   render() {
     return (
-      <div className="ui main">
+      <div className="Maindiv">
         <h2>Add Details</h2>
-        <form className="ui form" onSubmit={this.add}>
-          <div className="field">
-            <label>Name</label>
+        <form className="formdiv" onSubmit={this.add}>
+          <div className="subdiv">
+            <label>Name : </label>
             <input
               type="text"
               name="name"
@@ -37,8 +37,8 @@ class Register extends React.Component {
               onChange={(e) => this.setState({ name: e.target.value })}
             />
           </div>
-          <div className="field">
-            <label>Email</label>
+          <div className="subdiv">
+            <label>Email : </label>
             <input
               type="text"
               name="email"
@@ -47,8 +47,8 @@ class Register extends React.Component {
               onChange={(e) => this.setState({ email: e.target.value })}
             />
           </div>
-          <div className="field">
-            <label>Password</label>
+          <div className="subdiv">
+            <label>Password : </label>
             <input
               type="password"
               name="password"
@@ -57,8 +57,8 @@ class Register extends React.Component {
               onChange={(e) => this.setState({ password: e.target.value })}
             />
           </div>
-          <div className="field">
-            <label>UserName</label>
+          <div className="subdiv">
+            <label>UserName : </label>
             <input
               type="text"
               name="username"
@@ -67,8 +67,8 @@ class Register extends React.Component {
               onChange={(e) => this.setState({ username: e.target.value })}
             />
           </div>
-          <div className="field">
-            <label>Mobile</label>
+          <div className="subdiv">
+            <label>Mobile : </label>
             <input
               type="number"
               name="mobile"
@@ -77,8 +77,8 @@ class Register extends React.Component {
               onChange={(e) => this.setState({ mobile: e.target.value })}
             />
           </div>
-          <div className="field">
-            <label>Description</label>
+          <div className="subdiv">
+            <label>Description : </label>
             <input
               type="text"
               name="description"
@@ -87,7 +87,7 @@ class Register extends React.Component {
               onChange={(e) => this.setState({ description: e.target.value })}
             />
           </div>
-          <button className="ui button blue">Register</button>
+          <button className="buttondiv">Register</button>
         </form>
       </div>
     );

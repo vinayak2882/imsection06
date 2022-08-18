@@ -1,26 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {Routes, Route, Link} from 'react-router-dom';
 import Login from './Login'
-import Home from './Home'
+
 import List from './List'
 import Register from './Register';
 import ApiLink from '../Api/ApiLink';
+// import { uuid } from "uuidv4";
+
 
 const AllRoutes = () => {
 
 
-    const LOCAL_STORAGE_KEY = "contacts";
+   
     const [contacts, setContacts] = useState([]);
 
 
-    const resgisterHandler = async (ApiLink)=>{
-        console.log(ApiLink)
+    const resgisterHandler = async (contact)=>{
+        console.log(contact)
         const request ={
-            id:uuid(),
-            ...ApiLink,
+            // id,
+            ...contact,
         };
 
-        const response = await Api.post("/auth/register", request);
+        const response = await ApiLink.post("/auth/register", request);
         console.log(response)
         setContacts([...contacts], response.data)
 
@@ -31,7 +33,7 @@ const AllRoutes = () => {
   <Routes>
     {/* <Route path='/' element={<Home/>} ></Route> */}
     <Route path='/login' element={<Login/>} ></Route>
-    <Route path='/register' render={(props)=>(<Register {...props} resgisterHandler={resgisterHandler}/>)} ></Route>
+    <Route path='/register' element={<Register/>} render={(props)=>(<Register {...props} resgisterHandler={resgisterHandler}/>)} ></Route>
     <Route path='/employees' element={<List/>} ></Route>
   </Routes>
   </>
@@ -39,3 +41,6 @@ const AllRoutes = () => {
 }
 
 export default AllRoutes
+
+
+//  
