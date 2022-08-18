@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+.navbar{
+  width: 95%;
+  border: 1px solid black;
+  height: 45px;
+  display: flex;
+  text-decoration: none;
+  background-color: teal;
+  margin: auto;
+}
+.navbar button{
+  text-decoration: none;
+  border: 2px solid blue;
+  padding: 5px;
+  margin-right: 100px;
+margin-top: 7px;
+background-color: #61dafb;
+border-radius: 5px;
+}
+
